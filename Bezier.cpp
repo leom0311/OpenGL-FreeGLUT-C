@@ -80,6 +80,28 @@ PointF Bezier::CasteljauPoint(std::vector<PointF>points, float t) {
 	return CasteljauPoint(cp, t);
 }
 
+PointF Bezier::DeCasteljau_(const std::vector<PointF>& points, float t) {
+	std::vector<PointF> temp(points);
+	int n = temp.size();
+	for (int j = n - 1; j > 0; j--) {
+		for (int i = 0; i < j; i++) {
+			temp[i].x = (1 - t) * temp[i].x + t * temp[i + 1].x;
+			temp[i].y = (1 - t) * temp[i].y + t * temp[i + 1].y;
+		}
+	}
+	return temp[0];
+}
+
+std::pair<std::vector<PointF>, std::vector<PointF>> Bezier::CasteljauSubdividePoints(const std::vector<PointF> points, float t) {
+	std::vector<PointF> curve1, curve2;
+	int n = points.size();
+	for (int i = 0; i <= n; i++) {
+		curve1.push_back(DeCasteljau_(points, i / static_cast<float>(n)));
+		curve2.push_back(DeCasteljau_(points, (i + n) / static_cast<float>(n)));
+	}
+	return { curve1, curve2 };
+}
+
 void Bezier::clickMouse(int state, int x, int y) {
 	printf("click mouse > state: %d, x: %d, y: %d\n", state, x, y);
 	if (state) {

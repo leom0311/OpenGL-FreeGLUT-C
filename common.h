@@ -8,6 +8,10 @@
 
 enum {
 	METHOD_BezPoint = 0,
-	METHOD_CasteljauPoint
+	METHOD_CasteljauPoint,
+	METHOD_CasteljauSubdividePoints,
+	METHOD_FlagA,
+	METHOD_FlagB,
+	METHOD_FlagC
 };
 

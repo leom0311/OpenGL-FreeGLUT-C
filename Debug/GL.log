@@ -1,8 +1,2 @@
-﻿  Callbacks.cpp
-C:\Users\Administrator\source\repos\GL\GL\Callbacks.cpp(48,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Administrator\source\repos\GL\GL\Callbacks.cpp(48,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Administrator\source\repos\GL\GL\Callbacks.cpp(59,39): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Administrator\source\repos\GL\GL\Callbacks.cpp(73,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Administrator\source\repos\GL\GL\Callbacks.cpp(77,52): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Administrator\source\repos\GL\GL\Callbacks.cpp(82,66): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  main.cpp
   GL.vcxproj -> C:\Users\Administrator\source\repos\GL\Debug\GL.exe

@@ -21,6 +21,9 @@ private:
 	std::vector<PointF> m_vControlPoints;
 
 	int m_nMethod;
+
+protected:
+	PointF DeCasteljau_(const std::vector<PointF>& points, float t);
 public:
 	Bezier();
 	Bezier(int n);
@@ -38,6 +41,7 @@ public:
 
 	void BezPoint(int n, float t, PointF& ret);
 	PointF CasteljauPoint(std::vector<PointF>points, float t);
+	std::pair<std::vector<PointF>, std::vector<PointF>> CasteljauSubdividePoints(const std::vector<PointF> points, float t);
 
 	void clickMouse(int state, int x, int y);
 	void moveMouse(int x, int y);

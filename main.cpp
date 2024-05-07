@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
 	glutCreateWindow("FreeGLUT");
 	glutKeyboardFunc(&keyboard);
 	glutMouseFunc(&mouse);
-	glutDisplayFunc(&display);
+	glutDisplayFunc(&drawBez);
 	glutMotionFunc(&motion);
 	glutReshapeFunc(&reshape);
 
