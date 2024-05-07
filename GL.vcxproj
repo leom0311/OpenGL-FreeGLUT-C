@@ -135,11 +135,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Callbacks.c" />
-    <ClCompile Include="main.c" />
+    <ClCompile Include="Bezier.cpp" />
+    <ClCompile Include="Callbacks.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bezier.h" />
     <ClInclude Include="Callbacks.h" />
+    <ClInclude Include="common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
