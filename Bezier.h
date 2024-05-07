@@ -19,22 +19,25 @@ private:
 	int m_nSelectedPoint;
 	PointF m_newPoint;
 	std::vector<PointF> m_vControlPoints;
+
+	int m_nMethod;
 public:
 	Bezier();
 	Bezier(int n);
 	~Bezier();
 
+	void setMethod(int method);
+	int getMethod();
 	void setDegree(int n);
 	int getDegree();
 	void setControlPoints(std::vector<PointF> points);
-
 	std::vector<PointF> getControlPoints();
 
 
 	float B(int n, int i, float t);
 
 	void BezPoint(int n, float t, PointF& ret);
-	void CasteljauPoint(float t);
+	PointF CasteljauPoint(std::vector<PointF>points, float t);
 
 	void clickMouse(int state, int x, int y);
 	void moveMouse(int x, int y);

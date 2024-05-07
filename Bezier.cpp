@@ -23,11 +23,13 @@ PointF::PointF(float x_, float y_) {
 
 Bezier::Bezier() {
 	m_nSelectedPoint = -1;
+	m_nMethod = METHOD_BezPoint;
 }
 
 Bezier::Bezier(int n) {
 	m_N = n;
 	m_nSelectedPoint = -1;
+	m_nMethod = METHOD_BezPoint;
 }
 
 Bezier::~Bezier() {
@@ -65,14 +67,17 @@ void Bezier::BezPoint(int n, float t, PointF& ret) {
 	}
 }
 
-void Bezier::CasteljauPoint(float t) {
-#if 0
-	for (int i = 0; i < m_vControlPoints.size() - 1; ++i) {
-		double new_x = (1 - t) * m_vControlPoints[i].x + t * m_vControlPoints[i + 1].x;
-		double new_y = (1 - t) * m_vControlPoints[i].y + t * m_vControlPoints[i + 1].y;
-		new_points.push_back({ new_x, new_y });
+PointF Bezier::CasteljauPoint(std::vector<PointF>points, float t) {
+	if (points.size() == 1) {
+		return points[0];
 	}
-#endif
+	std::vector<PointF> cp;
+	for (int i = 0; i < points.size() - 1; ++i) {
+		float x = (1 - t) * points[i].x + t * points[i + 1].x;
+		float y = (1 - t) * points[i].y + t * points[i + 1].y;
+		cp.push_back(PointF(x, y));
+	}
+	return CasteljauPoint(cp, t);
 }
 
 void Bezier::clickMouse(int state, int x, int y) {
@@ -128,4 +133,11 @@ PointF Bezier::newPoint() {
 
 int Bezier::movingPoint() {
 	return m_nSelectedPoint;
+}
+
+void Bezier::setMethod(int method) {
+	m_nMethod = method;
+}
+int Bezier::getMethod() {
+	return m_nMethod;
 }

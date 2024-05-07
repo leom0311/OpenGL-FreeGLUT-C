@@ -10,6 +10,8 @@ extern "C" {
 	void display(void);
 	void motion(int x, int y);
 	void reshape(int w, int h);
+	void menu(int value);
+	void createMenu();
 
 #ifdef __cplusplus
 }

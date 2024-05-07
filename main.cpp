@@ -12,6 +12,7 @@ int main(int argc, char** argv) {
 	glutInitWindowSize(WIN_WIDTH, WIN_HEIGHT);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 
+	
 	g_Bezier.setDegree(3);
 	std::vector<PointF> points;
 	points.push_back(PointF(0.0f, 0.0f));
@@ -26,6 +27,8 @@ int main(int argc, char** argv) {
 	glutDisplayFunc(&display);
 	glutMotionFunc(&motion);
 	glutReshapeFunc(&reshape);
+
+	createMenu();
 	glutMainLoop();
 
 	return 0;
