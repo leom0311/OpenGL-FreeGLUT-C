@@ -1,0 +1,8 @@
+﻿  Callbacks.c
+C:\Users\Administrator\source\repos\GL\GL\Callbacks.c(29,41): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Administrator\source\repos\GL\GL\Callbacks.c(25,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Administrator\source\repos\GL\GL\Callbacks.c(25,33): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Administrator\source\repos\GL\GL\Callbacks.c(26,31): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Administrator\source\repos\GL\GL\Callbacks.c(30,110): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Administrator\source\repos\GL\GL\Callbacks.c(31,110): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  GL.vcxproj -> C:\Users\Administrator\source\repos\GL\Debug\GL.exe
